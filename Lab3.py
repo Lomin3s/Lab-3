@@ -202,19 +202,24 @@ def exponentiation():
 def logarithm():
     try:
         operand1 = str(input("Enter first operand: "))
-        operand2 = str(input("Enter second operand: "))
-        if operand1 == 'RESULT':
+        if operand1 == 'RESULT' and len(numberList) > 0:
             operand1 = numberList[-1]
-        if operand2 == 'RESULT':
+        elif operand1 == 'RESULT' and len(numberList) == 0:
+            print('Error: Invalid selection!')
+            operationsNoMenu()
+        operand2 = str(input("Enter second operand: "))
+        if operand2 == 'RESULT' and len(numberList) > 0:
             operand2 = numberList[-1]
+        elif operand2 == 'RESULT' and len(numberList) == 0:
+            print('Error: Invalid selection!')
+            operationsNoMenu()
         operand1 = float(operand1)
         operand2 = float(operand2)
-        if operand1 < 0:
+        if operand2 < 0:
             print('Error: Invalid selection!')
             operationsNoMenu()
         else:
-            result = math.log(operand1, operand2)
-            result = round(result,2)
+            result = math.log(operand2, operand1)
             numberList.append (result)
             print(f'\nCurrent Result: {result}')
             operations()
