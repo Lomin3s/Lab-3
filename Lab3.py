@@ -237,7 +237,7 @@ def average():
             average = total / numberOfItems
 
             print(f'Sum of calculations: {round(total,2)}\n'
-                  f'Number of Calculations: {numberOfItems}\n'
+                  f'Number of calculations: {numberOfItems}\n'
                   f'Average of calculations: {round(average, 2)}')
             operationsNoMenu()
         else:
